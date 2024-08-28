@@ -5,7 +5,8 @@ const api = require('./server.js');
 
 const helmet = require('helmet');
 app.use(helmet({
-  frameguard: { action: 'deny' },
+  frameguard: false,
+  xFrameOptions: { action: "sameorigin" },
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
